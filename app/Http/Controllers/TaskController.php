@@ -22,8 +22,8 @@ class TaskController extends Controller
             ->where('user_id', '=', auth()->id())
             ->paginate($perPage);
 
-        return $this->apiResponse(200, "products", null, [
-            'products' => TaskResource::collection($tasks),
+        return $this->apiResponse(200, "tasks", null, [
+            'tasks' => TaskResource::collection($tasks),
             'meta' => [
                 'current_page' => $tasks->currentPage(),
                 'last_page' => $tasks->lastPage(),
